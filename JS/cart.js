@@ -45,7 +45,6 @@ document.addEventListener("DOMContentLoaded", () => {
     if (totalPriceElement) totalPriceElement.textContent = `Total: ₱${total}`;
   }
 
-  // remove handler (event delegation)
   document.addEventListener("click", (e) => {
     const rem = e.target.closest("[data-remove]");
     if (!rem) return;
@@ -57,7 +56,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  // clear cart
   if (clearBtn) {
     clearBtn.addEventListener("click", () => {
       if (!confirm("Clear all items from cart?")) return;
@@ -67,6 +65,5 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // initial render
   render();
 });

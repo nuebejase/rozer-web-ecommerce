@@ -118,7 +118,6 @@ footer {
   font-size: 0.7em;
 }
 
-/* MODAL DESIGN */
 .modal {
   display: none;
   position: fixed;
@@ -161,7 +160,6 @@ footer {
   font-size: 20px;
 }
 
-/* small layout tweaks */
 #cartContainer .product-card {
   display: flex;
   gap: 12px;

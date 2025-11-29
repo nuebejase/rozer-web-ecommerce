@@ -12,25 +12,20 @@ const products = [
   { id: 9, name: "ILLIT Album", price: 499, img: "Images/ILLIT1.jpg", description: "ILLIT’s stunning debut album." }
 ];
 
-// Use a single shared key for localStorage
 const STORAGE_KEY = "rozer_cart";
 
-// load or init cart
 let cart = JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
 
-// update any cart count elements on page
 function updateCartCount() {
   const els = document.querySelectorAll("#cartCount");
   els.forEach(el => el.textContent = cart.length);
 }
 
-// save cart
 function saveCart() {
   localStorage.setItem(STORAGE_KEY, JSON.stringify(cart));
   updateCartCount();
 }
 
-// add item by id
 function addToCartById(id) {
   const p = products.find(x => x.id === id);
   if (!p) return;
@@ -39,7 +34,6 @@ function addToCartById(id) {
   alert(`${p.name} added to cart!`);
 }
 
-// open modal for product id
 function openModalById(id) {
   const p = products.find(x => x.id === id);
   if (!p) return;
@@ -51,7 +45,6 @@ function openModalById(id) {
   document.getElementById("modalPrice").textContent = `₱${p.price}`;
 
   const addBtn = document.getElementById("modalAddCart");
-  // remove previous listeners by replacing the node
   const newAddBtn = addBtn.cloneNode(true);
   addBtn.parentNode.replaceChild(newAddBtn, addBtn);
   newAddBtn.addEventListener("click", () => {
@@ -62,14 +55,12 @@ function openModalById(id) {
   modal.setAttribute("aria-hidden", "false");
 }
 
-// close modal
 function closeModal() {
   const modal = document.getElementById("modal");
   if (!modal) return;
   modal.setAttribute("aria-hidden", "true");
 }
 
-// render products grid
 function renderProducts() {
   const container = document.getElementById("productsContainer");
   if (!container) return;
@@ -87,22 +78,18 @@ function renderProducts() {
   `).join("");
 }
 
-// DOM ready
 document.addEventListener("DOMContentLoaded", () => {
   updateCartCount();
   renderProducts();
 
-  // close modal button
   const closeBtn = document.getElementById("closeModal");
   if (closeBtn) closeBtn.addEventListener("click", closeModal);
 
-  // background click to close
   const modal = document.getElementById("modal");
   if (modal) modal.addEventListener("click", (e) => {
     if (e.target === modal) closeModal();
   });
 
-  // event delegation for product grid buttons
   const container = document.getElementById("productsContainer");
   if (container) {
     container.addEventListener("click", (e) => {
