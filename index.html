@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rozer | Home</title>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="CSS/style.css">
+</head>
+
+<body>
+  <header>
+    <h1 class="logo">Rozer</h1>
+    <nav>
+      <input type="text" placeholder="Search albums..." class="search-bar">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="products.html">Albums</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="cart.html">Cart (<span id="cartCount">0</span>)</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <h2>Welcome to Rozer</h2>
+      <p>Your Pixelated Music Store 🎶</p>
+      <a href="products.html" class="btn">Shop Now</a>
+    </section>
+  </main>
+
+  <footer>
+    <p>&#169; 2025 Rozer | Pixelated and Music</p>
+  </footer>
+
+  <script>
+    // update cart count on every page load
+    const cart = JSON.parse(localStorage.getItem("cart")) || [];
+    document.getElementById("cartCount").textContent = cart.length;
+  </script>
+</body>
+</html>

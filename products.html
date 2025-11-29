@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Rozer | Albums</title>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="CSS/style.css">
+</head>
+<body>
+  <header>
+    <h1 class="logo">Rozer</h1>
+    <nav>
+      <input type="text" placeholder="Search albums..." class="search-bar">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="products.html">Albums</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="cart.html">Cart (<span id="cartCount">0</span>)</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h2>Our Album Collection</h2>
+
+    <!-- JS will populate this with product cards -->
+    <section class="product-grid" id="productsContainer"></section>
+  </main>
+
+  <!-- Modal for View Details -->
+  <div id="modal" class="modal" aria-hidden="true">
+    <div class="modal-content">
+      <span id="closeModal" class="close-btn">&times;</span>
+      <img id="modalImg" src="" alt="">
+      <h3 id="modalTitle"></h3>
+      <p id="modalDescription"></p>
+      <p id="modalPrice"></p>
+      <button id="modalAddCart" class="btn">Add to Cart</button>
+    </div>
+  </div>
+
+  <footer>
+    <p>&#169; 2025 Rozer | Pixelated and Music</p>
+  </footer>
+
+  <!-- Scripts at end so DOM is ready -->
+  <script src="JS/products.js"></script>
+</body>
+</html>

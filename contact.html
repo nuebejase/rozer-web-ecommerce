@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rozer | Contact</title>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="CSS/style.css">
+</head>
+
+<body>
+  <header>
+    <h1 class="logo">Rozer</h1>
+    <nav>
+      <input type="text" placeholder="Search albums..." class="search-bar">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="products.html">Albums</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="cart.html">Cart (<span id="cartCount">0</span>)</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="contact-form">
+      <h2>Contact Us</h2>
+      <form>
+        <input type="text" placeholder="Name" required>
+        <input type="email" placeholder="Email" required>
+        <textarea placeholder="Message" required></textarea>
+        <button type="submit" class="btn">Submit</button>
+      </form>
+    </section>
+
+    <section>
+      <ul>
+        <li class="product-card"><a href="https://www.facebook.com/">Facebook</a></li>
+        <li class="product-card"><a href="https://www.instagram.com/">Instagram</a></li>
+        <li class="product-card"><a href="https://x.com/">X</a></li>
+        <li class="product-card"><a href="https://open.spotify.com/">Spotify</a></li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <p>&#169; 2025 Rozer | Cute Pixels & Music Vibes</p>
+  </footer>
+
+  <script>
+    const cart = JSON.parse(localStorage.getItem("cart")) || [];
+    document.getElementById("cartCount").textContent = cart.length;
+  </script>
+</body>
+</html>

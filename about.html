@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rozer | About</title>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="CSS/style.css">
+</head>
+
+<body>
+  <header>
+    <h1 class="logo">Rozer</h1>
+    <nav>
+      <input type="text" placeholder="Search albums..." class="search-bar">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="products.html">Albums</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="cart.html">Cart (<span id="cartCount">0</span>)</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section>
+      <h2>About Rozer</h2>
+      <p>Rozer is your pixel-style K-pop album shop — cute, retro, and full of music vibes!</p>
+      <p>We bring your favorite groups to life with albums, merch, and colorful pixel aesthetics.</p>
+      <p>Made by fans, for fans. 🎶💗</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>&#169; 2025 Rozer | Pixelated and Music</p>
+  </footer>
+
+  <script>
+    const cart = JSON.parse(localStorage.getItem("cart")) || [];
+    document.getElementById("cartCount").textContent = cart.length;
+  </script>
+</body>
+</html>
